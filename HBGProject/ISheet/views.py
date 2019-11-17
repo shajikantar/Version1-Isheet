@@ -1,17 +1,68 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db import models
 from .models import contact
+from .models import form_IS
 from static.lists import *
-
-
+from .forms import Form
+from django.http import HttpResponse
+from django.utils.translation import gettext
 # Create your views here.
 
+
+def MainPage(request):
+   print("Request method ", request.method)
+   form = Form()
+   if request.method == 'POST':
+      print('select p ', request.POST.get('pd_country'))
+      print('select p ', request.POST.get('pd_Plat_methodology'))
+      print(form.is_valid())
+      print(form.errors)
+
+      if form.is_valid():
+         print('POST Yeah!!')
+         form.save(commit=False)
+         print("Request cname POST " , request.POST.get('pd_country'))
+         print("Form PD country method " , request.POST.get('method'))
+         print("Form PD country POST ", request.POST.get('pmethod'))
+         print("Clean Ctry :" , form.cleaned_data['pd_country'])
+         redirect('MainPage/')
+      else:
+         print("Request cname POST ", request.POST.get('pd_country'))
+         print("Form PD country method " , request.POST.get('method'))
+         print("Form PD country POST ", request.POST.get('pmethod'))
+         print("Invalid Form")
+         p = [["1","Value undefined","ProjectDetails"],["2","Issues","QDB tabs"]]
+         print(form.errors)
+         return render(request, 'error.html', {'p': p, 'form' : form })
+
+   output = gettext("Welcome to my site.")
+   print(output)
+   print("Shaji")
+
+   return render(request,'IS_index.html',{'CountryList': CountryList, 'SlList': SlList, 'PlatformVal': PlatformVal, 'Methodology': Methodology,
+                     'CategoryInForm': CategoryInForm, 'CategoryInDB': CategoryInDB,'brandno' : brandno,'agebands' : agebands,'form' : form})
+
 def InputSheet(request):
+   form_class = Is_Form
+   if request.method == 'POST':
+      form = Is_Form(request.POST)
+      if form.is_valid():
+         form.save(commit=False)
+         print('Select P ', request.POST.get('CntryName'))
+      else:
+         print('nnnn ', request.POST.get('CntryName'))
+         print('yyyy ', request.POST.get('form.pd_country'))
+   else:
+      print('Select G ', request.GET.get('CntryName'))
+      print('Select G ', request.GET.get('form.pd_country'))
+
    return render(request,'InputSheet.html',{'CountryList': CountryList, 'SlList': SlList, 'PlatformVal': PlatformVal, 'Methodology': Methodology,
-                  'CategoryInForm': CategoryInForm, 'CategoryInDB': CategoryInDB,'form': form})
+                     'CategoryInForm': CategoryInForm, 'CategoryInDB': CategoryInDB, 'brandno' : 16})
+
 
 def index(request):
    return render(request,'MainLandingPage.html')
+
 
 def Contacts(request):
 
@@ -72,3 +123,30 @@ def Contacts(request):
 
    contactsall = [contact1, contact2, contact3, contact4, contact5, contact6, contact7]
    return render(request, 'contacts.html',{'contact_list':contactsall})
+
+
+def Newtry(request):
+   print('select p ', request.POST.get('cname'))
+   if request.method == 'POST':
+      form = Form(request.POST)
+      print('shaji')
+      print('select p ', request.POST.get('pd_country'))
+      print('select pForm ',form.cleaned_data['pd_country'])
+      if form.is_valid():
+         form.save(commit=False)
+         #form.cleaned_data['pd_plat_methodology'] = form.cleaned_data['pd_country']
+         print('select p ', request.POST.get('cname'))
+         print('select cntry ', form.cleaned_data['pd_country'])
+         print('select method ', form.cleaned_data['pd_Plat_methodology'])
+         return render(request, 'New.html',{'CountryList': CountryList,'form': form})
+
+      else:
+         print('invalid form')
+         print('yyyy ', request.POST.get('pd_country'))
+         print('nnnn ', request.POST.get('cname'))
+         return render(request, 'New.html',{'CountryList': CountryList,'form': form})
+
+   else:
+      print('select g ', request.GET.get('cname'))
+      print('select g ', request.GET.get('form.pd_country'))
+      return render(request, 'New.html', {'CountryList': CountryList})

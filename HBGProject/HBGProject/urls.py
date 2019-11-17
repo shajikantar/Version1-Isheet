@@ -22,5 +22,7 @@ urlpatterns = [
     path('contacts/', views.Contacts),
     path('Inputsheet/', views.InputSheet),
     path('Index/', views.index),
+    path('NewTry/', views.Newtry),
+    path('MainPage/', views.MainPage),
     path('', views.index),
 ]

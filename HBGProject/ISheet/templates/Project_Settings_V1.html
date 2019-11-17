@@ -1,0 +1,185 @@
+<div id="ProjectSettings"class="tab-pane active" style="margin-top:-85%">
+    <div style="background-color:#FBFCFC;width:1200px;height:600px;margin-left:240px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 10px black;">
+		 {% csrf_token %}
+
+		 <center><h2 style="color:#7D3C98">Adnow Entry Form </h2></center>
+		     <table  style="margin-left:20px">
+				 <td style="width:300px;border:0px"><label class="labelAD">Country Name</label><br>
+				 	 	<select title="Country-select" id="pd_country" name="pd_country" class="form-input" style="width: 250px;padding: 4px;" required>
+							{% for cntry in CountryList %}
+								<option value="{{ cntry }}">{{ cntry }}</option>
+							{% endfor %}
+						</select>
+				 </td>
+
+				 <td style="width:220px;border:0px"><label for="Methodology" class="labelAD">Methodology</label><br>
+					<select title="Select Methodology" id="pd_Plat_methodology" name="pd_Plat_methodology" style="width: 180px;padding: 4px;">
+						{% for Methodol in Methodology %}
+						<option value="{{ Methodol }}">{{ Methodol }}</option>
+						{% endfor %}
+					</select>
+				 </td>
+
+				<td style="width:220px;border:0px"><label for="PlatMethodology" class="labelAD">PlatForm for Methodology</label><br>
+					<select id="pmethod" name="pmethod" class="form-input" style="width: 180px;padding: 4px;">
+						{% for PlatformV in PlatformVal %}
+						<option value="{{ PlatformV }}">{{ PlatformV }}</option>
+						{% endfor %}
+					</select></td>
+
+			<td style="border:0px">
+			<label for="birth_date" class="labelAD">Fieldwork Start Date (yyyyWeekno)</label><br>&nbsp&nbsp&nbsp
+			<input type="Date" name="birth_date" id="birth_date" placeholder="MM-DD-YYYY">
+			</td><br>
+			<tr>
+			<td style="border:0px"><br>
+			<label for="SL1" class="labelAD">Configuration</label>
+			<select id="config" name="config" class="form-input" style="width: 220px;padding: 4px;" required>
+				<option value="Focused">Focused (Updated Evoked)</option>
+				<option value="AT">ABS Traditional</option>
+				<option value="AE">ABS Enhanced</option>
+				<option value="AAA">Ask all aware</option>
+				<option value="ES">Evoked Set (DO NOT USE)</option>
+			</select>
+			</td>
+			<td style="border:0px"><br>
+
+			<label for="ER" class="labelAD">Equity Routing</label>
+			<select id="equity" name="config" class="form-input" style="width: 250px;padding: 4px;" required>
+				<option value="Equity">No Equity</option>
+				<option value="SP">Streamlined Power</option>
+				<option value="MDPM">Multi-dimensional Power & MDS</option>
+				<option value="MDPMP">Multi-dimensional Power & MDS + Premium  </option>
+			</select></td>
+
+			<td style="border:0px"><br>
+			<label for="ABS" class="labelAD">ABS Brands Selected</label><br>
+			<select id="abs" name="config" class="form-input" style="width: 150px;padding: 4px;" required>
+				<option value="MDPM">NA</option>
+				<option value="MDPMP">12</option>
+			</select>
+			</td>
+
+			</table><br>
+			<legend class="legend" style="font-weight:bold;color:#7D3C98;margin-left:1%">Survey Language</legend>
+
+			<table style="margin-top:-3%;margin-left:20px">
+			<td style="width:20%;border:0px">
+		    <label for="SL1" class="labelAD">Survey Language 1</label><br>
+			<select id="sl1name" name="sl1name" oninput="copy_data(this)" class="form-input" style="width: 150px;padding: 4px;" required>
+				{% for SList in SlList %}
+				<option value="{{ SList }}">{{ SList }}</option>
+				{% endfor %}
+			</select>
+			</td>
+			<td style="width:20%;border:0px">
+			<label for="SL2" class="labelAD">Survey Language 2</label><br>
+			<select id="sl2name" name="sl2name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="{{ SList }}">{{ SList }}</option>
+				{% endfor %}
+			</select>
+			</td>
+			<td style="width:20%;border:0px">
+			<label for="SL3" class="labelAD">Survey Language 3</label><br>
+			<select id="sl3name" name="sl3name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select>
+			</td>
+			<td style="width:100px;border:0px">
+			<label for="SL4" class="labelAD">Survey Language 4</label><br/>
+			<select id="sl4name" name="sl4name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select></td><tr>
+			<td style="width:20%;border:0px">
+
+			<label for="SL5" class="labelAD">Survey Language 5</label><br/>
+			<select id="sl5name" name="sl5name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select></td>
+				<td style="width:300px;border:0px">
+			<label for="SL6" class="labelAD">Survey Language 6</label><br/>
+			<select id="sl6name" name="sl6name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select></td>
+
+				<td style="width:300px;border:0px">
+			<label for="SL7" class="labelAD">Survey Language 7</label><br>
+			<select id="sl7name" name="sl7name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select></td>
+			<td style="border:0px">
+			<label for="SL8" class="labelAD">Survey Language 8</label><br>
+			<select id="sl8name" name="sl8name" class="form-input" style="width: 150px;padding: 4px;">
+				{% for SList in SlList %}
+				<option value="">{{ SList }}</option>
+				{% endfor %}
+			</select></td>
+			</tr>
+	</fieldset>
+       <br><br>
+	 </table><br>
+<fieldset class="FS1"><legend class="legend" style="font-weight:bold;color:#7D3C98;margin-left:1%">Other Information</legend>
+
+		<label for="ENL" class="labelAD">**English Link for Live</label>
+		<select id="sl8name" name="sl8name" class="form-input" style="width: 150px;padding: 4px;">
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
+		</select>
+
+		<label for="SD" class="labelAD">Survey Director for Web (CAWI ONLY)</label>
+		<select id="sl8name" name="sl8name" class="form-input" style="width: 150px;padding: 4px;;margin-top:14px">
+			<option value="Yes">Yes</option>
+			<option value="No">No</option>
+		</select>
+
+
+		<label for="ENL" class="labelAD">Quota</label>
+		<select id="quota" name="quota" class="form-input" style="width: 150px;padding: 4px;">
+			<option value="NA">NA</option>
+			<option value="US">US</option>
+		</select>
+		</fieldset><br>
+
+		<p style="margin-left:1%"> Note : Advert details to be entered in the above form... Click on the "Generate Excel file" once all the forms are complete</p>
+		  <p style="float:right;margin-top;12%"> Form <b>1</b> out of <b>35</b> </p>
+			<br>
+			<div class="pagination-wrapper" style="margin-top:1%">
+			  <center><div class="pagination">
+				<a data-toggle="pill"  href="#menu2">&laquo;</a>
+				<a data-toggle="pill"  class="active" href="#ProjectSettings">1</a>
+				<a data-toggle="pill"  href="#qdb">2</a>
+				<a data-toggle="pill"  href="#additional_Project_Settings">3</a>
+				<a data-toggle="pill"  href="#ProjectTextReplacement">4</a>
+				<a data-toggle="pill"  href="#brands:;">5</a>
+				<a data-toggle="pill"  href="#menu2">6</a>
+				<a data-toggle="pill"  href="#AdMessaging">7</a>
+				<a data-toggle="pill"  href="#adnow_ads">8</a>
+				<a data-toggle="pill"  href="#adnow_ads">9</a>
+				<a data-toggle="pill"  href="#adnow_ads">10</a>
+				<a data-toggle="pill"  href="#adnow_ads">11</a>
+				<a data-toggle="pill"  href="#adnow_ads">12</a>
+				<a data-toggle="pill"  href="#adnow_ads">13</a>
+				<a data-toggle="pill"  href="#adnow_ads">14</a>
+				<a data-toggle="pill"  href="#adnow_ads">15</a>
+				<a data-toggle="pill"  href="#adnow_ads">16</a>
+			   <a data-toggle="pill"  href="#adnow_ads">&raquo;</a>
+			  </center></div>
+			</div>
+		</div>
+<script>
+ function getLanguage(){
+     var address = document.getElementById("sl1name").value;
+     //alert('address ' ,address)
+    }
+</script>

@@ -6,19 +6,22 @@
 </head>
 <body>
 
- <table style="background-color:#C0392B;width:1470px;margin-left:5px">
+<form method=POST">
+		{% csrf_token %}
+ <table style="background-color:#2f353d;width:1470px;margin-left:5px">
         <tr><td colspan="1" style="border:0px;">
             <h1 style="font-size:25px;font-weight:bold;color:white"> &nbsp&nbsp&nbsp&nbspHBG Inputsheet</h1> </td>
-            <td style="border:4px;"><a class="btn btn-primary" style="margin-left:80%;background-color:black" href="#plans" data-element-label="buy-now" data-element-type="cta" data-element-location="hero" onclick="GenerateInputExcel()">Save and Generate Input Sheet</button></td>
-            <td style="border:0px;">	 <a class="btn btn-primary" style="margin-left:40%;background-color:black" href="#plans" data-element-label="buy-now" data-element-type="cta" data-element-location="hero" onclick="window.location.href = 'http://localhost:8000/'">Back to Home Page</button></td>
-            <tr><td style="border:0px;"></td>
+            <td style="border:4px;height:30px"><input type="Submit" value = "Save and Generate Excel File" class="btn btn-primary" style="margin-left:80%;background-color:#1ABC9C;width:240px"></td>
+            <td style="border:0px;"><button class="btn" style="margin-left:40%;background-color:#1ABC9C;width:190px;color:white"  onclick="window.location.href = 'http://localhost:8000/'"><i class="fa fa-home"></i>Back to Home Page</button></td>
+
+	 <tr><td style="border:0px;"></td>
     </tr></table>
 
 
- <nav class="menu" style="width:1950px;margin-top:-16px;margin-left:-12px">
+ <nav class="menu" style="width:1950px;margin-top:-16px;margin-left:-12px;font-size:120px">
  <ul>
 			  <li><a class="fly" title="Contact Us" href="#">Project Information</a>
-			   <ul><li><a data-toggle="pill" href="#ProjectSettings" style="font-size:13px;">Project Settings</a></li>
+			   <ul> <li><a data-toggle="pill" href="#ProjectSettings" style="font-size:13px;">Project Settings</a></li>
 					 <li><a data-toggle="pill" href="#qdb" style="font-size:13px;">QDB</a></li>
 					 <li><a data-toggle="pill" href="#additional_Project_Settings">Additional Project Settings</a></li>
 					 <li><a data-toggle="pill" href="#menu3">Project Level Replacement</a></li>
@@ -140,10 +143,10 @@
 <!-- --------------------------------------additional settings --!>
 
   <div class="tab-content">
+	  {% include "brands.html" %}
 	  {% include "Qdb_tabs.html" %}
 	  {% include "additional_project_settings.html" %}
 	  {% include "Project_Settings.html" %}
-	  {% include "brands.html" %}
 
     <div id="menu2" class="tab-pane fade">
  	        <h1>Not Developed Yet</h1>
@@ -156,9 +159,7 @@
     </div>
 
    </div>
-
-</body>
-
+</form>
 </body>
 <style>
 

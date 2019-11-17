@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class contact():
     id = models.CharField(max_length=5)
@@ -7,15 +8,6 @@ class contact():
     passion = models.CharField(max_length=100)
     mailid = models.CharField(max_length=100)
 
-class projectdetails(models.Model):
-    Email = models.CharField(max_length=70)
-    ProjectName = models.CharField(max_length=70)
-    UserName = models.CharField(max_length=70)
-    Company = models.CharField(max_length=70)
-    Contact = models.CharField(max_length=70)
-    InitialPassword = models.CharField(max_length=70)
-
-class Is_details(models.Model):
-    title = models.CharField(max_length=100)
-    gender = models.CharField(max_length=255)
-    notes = models.CharField(max_length=255)
+class form_IS(models.Model):
+    pd_country = models.CharField(max_length=100,null=True)
+    pd_Plat_methodology = models.CharField(max_length=100,null=True)

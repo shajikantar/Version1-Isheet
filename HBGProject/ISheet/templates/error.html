@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> Validation Errors - (Dummy Values)</h3>
+
+<table style="background-color:#2f353d;color:white;border:1">
+<th>Error No</th>
+<th colspan="3">Error Desc</th>
+<th>Tab ID</th>
+
+{% for x,y,z in p %}
+    <tr>
+    <td>  {{ x }} </td>
+    <td colspan="3">  {{ y }} </td>
+    <td>  {{ z }} </td>
+</tr>
+{% endfor %}
+</table>
+</body>
+</html>

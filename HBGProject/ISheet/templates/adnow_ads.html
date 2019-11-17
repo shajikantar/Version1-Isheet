@@ -1,0 +1,74 @@
+
+ <div id="adnow_ads" class="tab-pane fade" style="margin-left:1%;margin-top:-85%;">
+
+     <div style="width:1820px;margin-left:240px;height:640px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 15px black">
+    <p>"ADNOW AD's : Minimum 1 - Maximum 15 Ads
+Spend up to end of fieldwork – The spend on the ad between the ad start date and the end of the recognition period. The spend data will be used to analyse the ad recognition in order for you to filter your norms by the Spend metric.
+Spend for Market – The expenditure on the ad or media campaign just for the market of fieldwork.</p>
+        <table style="width:1100px;margin-left:40px;border:1px">
+			<thead>
+            	  <tr>
+					<th style="width:50px;height:40px;font-size:16px"> &nbsp Index</th>
+					<th style="width:100px;font-size:15px" colspan="1"><center>Type in - English Default</th>
+					<th style="width:100px;font-size:15px" colspan="1"><center>Format of Ad</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Media Type</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>AD Length (in secs)</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Brand Name Pick from Brands <br> Sheet and must be TBCA Brand</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Spend up to <br> end of fieldwork</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Spend For market</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>GRPs or Impressions</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>"Date Ad is first <br> shown (YYYYMMDD)"</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>"Date Ad is last <br> shown (YYYYMMDD)"</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>News Value</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Brand Status</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Competitor Ad</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Is the brand name at <br> rating scale a <br> variant/line extension?</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>English <br> (United Kingdom)</th>
+                    <th style="width:100px;font-size:15px" colspan="1"><center>Spanish <br> (Mexico)</th>
+         		  </tr>
+			</thead>
+               {% for i in brandno %}
+    			  <tr>
+                      <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i}}"  value = {{ i }} style="width:50px" DISABLED ></td>
+                      <td><input type="text" style="width:100px" id="Brand_{{ i}}" name="Brand_{{ i}}" class="BrandField"> </td>
+                      <td><input type="text" style="width:100px" name="Q00_58_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                      <td><input type="text" style="width:100px" name="Q00_56_{{ i}}" class="BoxField"  placeholder=""></td>
+                  </tr>
+               {% endfor %}
+           </table>
+         <div class="pagination-wrapper"  style="margin-top:1%;float:left">
+			  <div class="pagination"><center>
+				<a data-toggle="pill"  href="#menu2">&laquo;</a>
+				<a data-toggle="pill"  href="#ProjectSettings">1</a>
+				<a data-toggle="pill"  href="#qdb">2</a>
+				<a data-toggle="pill"   href="#additional_Project_Settings">3</a>
+				<a data-toggle="pill"  href="#ProjectTextReplacement">4</a>
+				<a data-toggle="pill"  href="#brands:;">5</a>
+				<a data-toggle="pill"  href="#menu2">6</a>
+				<a data-toggle="pill"  href="#AdMessaging">7</a>
+				<a data-toggle="pill"  class="active" href="#adnow_ads">8</a>
+				<a data-toggle="pill"  href="#adnow_ads">9</a>
+				<a data-toggle="pill"  href="#adnow_ads">10</a>
+				<a data-toggle="pill"  href="#adnow_ads">11</a>
+				<a data-toggle="pill"  href="#adnow_ads">12</a>
+				<a data-toggle="pill"  href="#adnow_ads">13</a>
+				<a data-toggle="pill"  href="#adnow_ads">14</a>
+				<a data-toggle="pill"  href="#adnow_ads">15</a>
+				<a data-toggle="pill"  href="#adnow_ads">16</a>
+				<a data-toggle="pill"  href="#adnow_ads">17</a>
+				<a data-toggle="pill"  href="#adnow_ads">&raquo;</a>
+			  </center></div>
+         </div>

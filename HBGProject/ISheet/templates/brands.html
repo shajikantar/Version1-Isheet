@@ -1,88 +1,65 @@
 
-
-    <div id="brands" class="tab-pane fade">
-    <form class="form-style-9" style="margin-left:1%;margin-right:5%;;margin-top:-8%"><br>
-            <h3 style="background-color:#A9E2F3">Minimum 2 - Maximum 32 brands (To remain mobile friendly recommend no more than 8)
+ <div id="brands" class="tab-pane fade" style="width:1530px;margin-left:1%;margin-top:-85%;">
+       <p style="margin-left:240px">Minimum 2 - Maximum 32 brands (To remain mobile friendly recommend no more than 8)
                                     Brand names cannot exceed 50 characters (in any language)
-                                    Need minimum of 3 brands to conduct the NeedScope Module</h3>
-          <table style="width:1440px">
+                                    Need minimum of 3 brands to conduct the NeedScope Module</p>
+    <div style="width:1450px;margin-left:240px;height:590px;padding: 10px;border: 2px solid #305A72;box-shadow: 1px 1px 10px black">
+          <table style="width:1390px;margin-left:-.5px">
 			<thead>
 				  <center><tr>
-					<th style="width:50px" >&nbspIndex</th>
-					<th style="width:130px">Type in - English Default</th>
-					<th style="width:100px" colspan="1">"Q058 - Ad Messaging Brands (Select min. 2 brands)"</th>
-					<th style="width:100px" colspan="1">"Q056 - TBCA follow up brands (Select atleast 1 brand)"</th>
-                    <th style="width:100px" colspan="1">"DBA Brands (Select brands required for DBA, feasibility checks must have been completed)"</th>
-                    <th style="width:100px" colspan="1">"Brand to display when dashboard first opened (Select one brand only)"</th>
-                    <th style="width:100px" colspan="1">"NPS (Select that qualify for NPS)"</th>
-                    <th style="width:100px" colspan="1">"English (United Kingdom) "</th>
-                    <th style="width:100px" colspan="1">"Spanish (Mexico) "</th>
-                    <th style="width:100px" colspan="1">"English (United Kingdom) "</th>
-                    <th style="width:100px" colspan="1">"Spanish (Mexico) "</th>
+					<th style="width:50px"> &nbspIndex</th>
+					<th style="width:135px">Type in - English Default</th>
+					<th style="width:115px" colspan="1">"Q058 - Ad Messaging Brands (Select min. 2 brands)"</th>
+					<th style="width:115px" colspan="1">"Q056 - TBCA follow up brands (Select atleast 1 brand)"</th>
+                    <th style="width:115px" colspan="1">"DBA Brands (Select brands required for DBA, feasibility checks must have been completed)"</th>
+                    <th style="width:115px" colspan="1">"Brand to display when dashboard first opened (Select one brand only)"</th>
+                    <th style="width:115px" colspan="1">"NPS (Select that qualify for NPS)"</th>
+                    <th style="width:115px" colspan="1">"English (United Kingdom) "</th>
+                    <th style="width:155px" colspan="1"><input style="background-color:#AED6F1;border:0px;width:160px;font-size:14px" disabled type="text" id="br_lang2a" ></center></th>
+                    <th style="width:115px" colspan="1">"English (United Kingdom) "</th>
+                    <th style="width:155px" colspan="1"><input style="background-color:#AED6F1;border:0px;width:160px;font-size:14px" disabled type="text" id="br_lang2b" ></center></th>
   				  </tr></center>
 			</thead>
-		 </table>
-		   <table>
-				  <tr>
-                      <td><input type="text" name="Sn_No_1" class="BoxField"  style="width:70px" placeholder="Sr. No"</td>
-                      <td><input type="text" id="Brand_1" name="Brand_1" class="BrandField"  placeholder="Brands"</td>
-                      <td><input type="text" name="Q00_58_1" class="BoxField"  placeholder=""</td>
-                      <td><input type="text" name="Q00_56_1" class="BoxField"  placeholder=""</td>
-                      <td><input type="text" name="DBA_1" class="BoxField" </td>
-                      <td><input type="text" name="Dash_brand_1" class="BoxField"  </td>
-                      <td><input type="text" name="NPS_1" class="BoxField"  </td>
-                      <td><input type="text" name="ENU_1" class="BoxField"  </td>
-                      <td><input type="text" name="SPA_1" class="BoxField"  </td>
-                      <td><input type="text" name="media_ENU_1" class="BoxField"  </td>
-                      <td><input type="text" name="media_SPA_1" class="BoxField"  </td>
+               {% for i in brandno %}
+    			  <tr>
+                      <td><input type="text" name="Sn_No_{{ i}}" class="BoxField_{{ i}}"  value = {{ i }} style="width:50px"  DISABLED /></td>
+                      <td><input type="text" style="width:135px" id="Brand_{{ i}}" name="Brand_{{ i}}" class="BrandField"  placeholder="Type Brands"></td>
+                      <td><input type="text" style="width:115px" name="Q00_58_{{ i}}" class="BoxField_{{ i}}"  placeholder=""></td>
+                      <td><input type="text" style="width:115px" name="Q00_56_{{ i}}" class="BoxField_{{ i}}"  placeholder=""></td>
+                      <td><input type="text" style="width:115px" name="DBA_{{ i}}" class="BoxField_{{ i}}"> </td>
+                      <td><input type="text" style="width:115px" name="Dash_brand_{{ i}}" class="BoxField_{{ i}}" > </td>
+                      <td><input type="text" style="width:115px" name="NPS_{{ i}}" class="BoxField_{{ i}}">  </td>
+                      <td><input type="text" style="width:115px" name="ENU_{{ i}}" class="BoxField_{{ i}}">  </td>
+                      <td><input type="text" style="width:155px" name="SPA_{{ i}}" class="BoxField_{{ i}}">  </td>
+                      <td><input type="text" style="width:115px" name="media_ENU_{{ i}}" class="BoxField_{{ i}}">  </td>
+                      <td><input type="text" style="width:155px" name="media_SPA_{{ i}}" class="BoxField_{{ i}}">  </td>
                   </tr>
-				  <tr>
-                      <td><input type="text" name="Sn_No_1" class="BoxField" style="width:70px" placeholder="Sr. No"</td>
-                      <td><input type="text" name="Brand_2" class="BrandField" placeholder="Brands"</td>
-                      <td><input type="text" name="Q00_58_1" class="BoxField" placeholder=""</td>
-                      <td><input type="text" name="Q00_56_1" class="BoxField" placeholder=""</td>
-                      <td><input type="text" name="DBA_1" class="BoxField" </td>
-                      <td><input type="text" name="Dash_brand_1" class="BoxField" </td>
-                      <td><input type="text" name="NPS_1" class="BoxField" </td>
-                      <td><input type="text" name="ENU_1" class="BoxField" </td>
-                      <td><input type="text" name="SPA_1" class="BoxField" </td>
-                      <td><input type="text" name="media_ENU_1" class="BoxField" </td>
-                      <td><input type="text" name="media_SPA_1" class="BoxField" </td>
-                  </tr>
-				  <tr>
-                      <td><input type="text" name="Sn_No_1" class="BoxField" style="width:70px" placeholder="Sr. No"</td>
-                      <td><input type="text" name="Brand_3" class="BrandField" placeholder="Brands"</td>
-                      <td><input type="text" name="Q00_58_1" class="BoxField" placeholder=""</td>
-                      <td><input type="text" name="Q00_56_1" class="BoxField" placeholder=""</td>
-                      <td><input type="text" name="DBA_1" class="BoxField" </td>
-                      <td><input type="text" name="Dash_brand_1" class="BoxField" </td>
-                      <td><input type="text" name="NPS_1" class="BoxField" </td>
-                      <td><input type="text" name="ENU_1" class="BoxField" </td>
-                      <td><input type="text" name="SPA_1" class="BoxField" </td>
-                      <td><input type="text" name="media_ENU_1" class="BoxField" </td>
-                      <td><input type="text" name="media_SPA_1" class="BoxField" </td>
-                  </tr>
-				  <tr>
-                      <td><input type="text" name="Sn_No_1" class="BoxField" style="width:70px" placeholder="Sr. No"</td>
-                      <td><input type="text" name="Brand_4" class="BrandField" placeholder="Brands"</td>
-                      <td><input type="text" name="Q00_58_1" class="BoxField" placeholder=""</td>
-                      <td><input type="text" name="Q00_56_1" class="BoxField" placeholder=""</td>
-                      <td><input type="text" name="DBA_1" class="BoxField" </td>
-                      <td><input type="text" name="Dash_brand_1" class="BoxField" </td>
-                      <td><input type="text" name="NPS_1" class="BoxField" </td>
-                      <td><input type="text" name="ENU_1" class="BoxField" </td>
-                      <td><input type="text" name="SPA_1" class="BoxField" </td>
-                      <td><input type="text" name="media_ENU_1" class="BoxField" </td>
-                      <td><input type="text" name="media_SPA_1" class="BoxField" </td>
-                  </tr>
+               {% endfor %}
            </table>
-      </form>
-
-	   <div class="input-group mb-3 group-end"><center>
-            <a data-toggle="pill" href="#menu3"class="btn btn-danger btnPrevious" style="margin-left:650px"> << Previous</a>
-            <a data-toggle="pill" href="#menu3" class="btn btn-success btnNext" style="margin-left:10px">Next >></a></center>
-       </div>
-    </div>
+ </div>
+     			<div class="pagination-wrapper"  style="margin-top:0%">
+			  <center><div class="pagination">
+				<a data-toggle="pill"  href="#menu2">&laquo;</a>
+				<a data-toggle="pill"  href="#ProjectSettings">1</a>
+				<a data-toggle="pill"  href="#qdb">2</a>
+				<a data-toggle="pill"   href="#additional_Project_Settings">3</a>
+				<a data-toggle="pill"  href="#ProjectTextReplacement">4</a>
+				<a data-toggle="pill"  class="active" href="#brands:;">5</a>
+				<a data-toggle="pill"  href="#menu2">6</a>
+				<a data-toggle="pill"  href="#AdMessaging">7</a>
+				<a data-toggle="pill"  href="#adnow_ads">8</a>
+				<a data-toggle="pill"  href="#adnow_ads">9</a>
+				<a data-toggle="pill"  href="#adnow_ads">10</a>
+				<a data-toggle="pill"  href="#adnow_ads">11</a>
+				<a data-toggle="pill"  href="#adnow_ads">12</a>
+				<a data-toggle="pill"  href="#adnow_ads">13</a>
+				<a data-toggle="pill"  href="#adnow_ads">14</a>
+				<a data-toggle="pill"  href="#adnow_ads">15</a>
+				<a data-toggle="pill"  href="#adnow_ads">16</a>
+				<a data-toggle="pill"  href="#adnow_ads">17</a>
+				<a data-toggle="pill"  href="#adnow_ads">&raquo;</a>
+			  </center></div>
+ </div>
 
 <style>
 
